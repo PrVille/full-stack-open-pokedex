@@ -40,7 +40,7 @@ jobs:
   tag_release:
       if: ${{ github.event_name == 'push' && !contains(join(toJson(github.event.commits.*.message), ' '), '#skip')}}
       needs: [simple_deployment_pipeline]
-      runs-on: ubuntu-22.04
+      runs-on: ubuntu-22.04 
       steps:
         - uses: actions/checkout@v3
           with:
