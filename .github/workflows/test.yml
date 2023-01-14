@@ -22,3 +22,15 @@ jobs:
         env:
           COMMIT_MESSAGES: ${{ toJson(github.event.commits.*.message) }}
         run: echo "$COMMIT_MESSAGES"
+      - name: echo repo
+        env:
+          REPO: ${{github.repository}}
+        run: echo "$REPO"
+      - name: echo sha
+        env:
+          SHA: ${{github.sha}}
+        run: echo "$SHA"
+      - name: echo actor
+        env:
+          ACTOR: ${{github.actor}}
+        run: echo "$ACTOR"
