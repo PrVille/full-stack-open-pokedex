@@ -2,7 +2,8 @@ name: Periodic health check
 
 on:
   schedule:
-    - cron:  '0/5 * * * *'
+    # Triggers the workflow every day at 17:30 UTC:
+    - cron:  '30 17 * * *'
 
 jobs:
   health_check:
