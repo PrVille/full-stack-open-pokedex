@@ -34,3 +34,11 @@ jobs:
         env:
           ACTOR: ${{github.actor}}
         run: echo "$ACTOR"
+      - name: echo failure msg
+        env:
+          FMSG: commit https://github.com/${{ github.repository }}/commit/${{ github.sha }} by ${{ github.actor }} broke the build :(
+        run: echo "$FMSG"
+      - name: echo success msg
+        env:
+          SMSG: to https://my-pokedex.fly.dev/ by ${{ github.actor }}
+        run: echo "$SMSG"
